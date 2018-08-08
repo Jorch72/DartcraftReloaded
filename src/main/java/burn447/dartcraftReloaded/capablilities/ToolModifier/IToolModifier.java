@@ -124,6 +124,15 @@ public interface IToolModifier extends INBTSerializable<NBTTagCompound> {
     void setBleeding(int level);
     void setBleeding(int level, boolean newVal);
 
+    boolean hasCamo();
+    void setCamo(boolean newVal);
+
+    boolean hasSpeed();
+    void setSpeed(boolean newVal);
+
+    boolean hasDamage();
+    void setDamage(boolean newVal);
+
     boolean hasUpgrades(ItemStack stack);
 
 }
