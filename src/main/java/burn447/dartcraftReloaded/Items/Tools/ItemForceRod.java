@@ -6,6 +6,7 @@ import burn447.dartcraftReloaded.capablilities.ForceRod.ForceRodProvider;
 import burn447.dartcraftReloaded.dartcraftReloaded;
 import burn447.dartcraftReloaded.util.References;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -44,13 +45,16 @@ public class ItemForceRod extends ItemBase {
         setUnlocalizedName(name);
         setApplicableModifers();
         this.setCreativeTab(dartcraftReloaded.creativeTab);
+        this.setMaxDamage(100);
     }
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        if(worldIn.getBlockState(pos) == Blocks.IRON_ORE.getDefaultState()){
-            worldIn.setBlockState(pos, ModBlocks.orePower.getDefaultState());
+        if(facing == EnumFacing.UP){
+            if(!worldIn.isRemote){
+
+            }
         }
 
         return EnumActionResult.PASS;
